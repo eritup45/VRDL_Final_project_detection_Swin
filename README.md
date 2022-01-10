@@ -32,7 +32,6 @@ Our private score is 0.15814, and our public score is 0.05729.
 conda install pytorch==1.10.0 torchvision==0.11.1 cudatoolkit=10.2 -c pytorch
 pip install openmim
 mim install mmdet
-
 ```
 * install packages
 ```
@@ -41,7 +40,6 @@ pip install opencv-python
 pip install pandas
 pip install pydicom
 pip install future tensorboard
-
 ```
 
 ### Apex (optional):
@@ -54,7 +52,7 @@ pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp
 
 ## Data Preparation
 * First, transform dicom image to png image. Afterwards, split train image and validation image to 9:1. 
-* We have done this for you. Simply download data from [Google drive](https://drive.google.com/file/d/1uZDPDqx_8SV7O-pWyP_ClygY2N9CBrNj/view?usp=sharing), and put data in data/coco directory.
+* We have done this for you. Simply download data from [Google drive](https://drive.google.com/drive/folders/1flGJPBtM46XgcCc54ewZdVN0uVkJhmi1?usp=sharing), and put data in data/coco directory.
 
 
 * Go to directory: `cd data/coco`
@@ -78,7 +76,7 @@ cp test_coco.json ./annotations
 python tools/train.py configs/swinT/swinT.py
 ```
 ## download pretrainted model
-* After we train, it will produce epoch5.pth in work_dirs/swin-t_0:1, please put epoch5.pth in work_dir/swin-t_0:1. [download pretrainted model1](https://drive.google.com/file/d/1ARuXW_dw24XpTkbl5H-bxZmMBTBBgTh1/view?usp=sharing)
+* After we train, it will produce epoch5.pth in work_dirs/swin-t_0:1, please put epoch5.pth in work_dir/swin-t_0:1. [download pretrainted model1](https://drive.google.com/drive/folders/1dUPEGCeYCzkIY5xpZGSWQfldoWzf1mWk?usp=sharing)
 * (Optional) If you want to ensemble models, [download pretrainted model2](https://drive.google.com/file/d/1QmftZPFuDphWB5y1Mk7SKJjKdsuuXjEq/view?usp=sharing), and modify the model path in the following command.
 
 
@@ -86,7 +84,6 @@ python tools/train.py configs/swinT/swinT.py
 * It will generate result.box.json and result.segm.json file and we can analyze with these files
 ```
 python tools/test.py configs/swinT/swinT.py ./work_dirs/swin-t_0:1/epoch_5.pth --format-only --options "jsonfile_prefix=./results"
-
 ```
 
 ## Generate csv file
