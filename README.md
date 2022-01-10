@@ -82,18 +82,19 @@ python tools/train.py configs/swinT/swinT.py
 * After we train, it will produce epoch5.pth in work_dirs/swin-t_0:1, please put epoch5.pth in work_dir/swin-t_0:1. [download pretrainted model1](https://drive.google.com/drive/folders/1dUPEGCeYCzkIY5xpZGSWQfldoWzf1mWk?usp=sharing)
 * (Optional) If you want to ensemble models, [download pretrainted model2](https://drive.google.com/file/d/1QmftZPFuDphWB5y1Mk7SKJjKdsuuXjEq/view?usp=sharing), and modify the model path in the following command.
 
+### output bounding boxes, (and segmentation polygon)
 * The following command will generate result.box.json and result.segm.json file.
 ```
 python tools/test.py configs/swinT/swinT.py ./work_dirs/swin-t_0:1/epoch_5.pth --format-only --options "jsonfile_prefix=./results"
 ```
 
-## Generate csv file
+### Generate csv file
 * It will generate the csv file which will uploaded to kaggle. Please Modify the `checkpoint` variable to select different model weight. After execution, we will get answer_1.csv file.
 ```
 python generate_csv.py
 ```
 
-## Ensemble (optional)
+### Ensemble (optional)
 * These are the csv answers we ensemble (produced by the above weight). [Google drive](https://drive.google.com/drive/folders/1GSD8JdPbntLMF76tnEeN7kv83_SEVVDl?usp=sharing)
 
 * Run following command to ensemble.
